@@ -28,11 +28,13 @@ flutter:
     - assets/icons/connect.svg
     - assets/icons/create.svg
     - assets/icons/import.svg
+    - assets/icons/select.svg
     - assets/sample/1.png
     - assets/sample/2.png
     - assets/sample/3.png
     - assets/sample/4.png
     - assets/sample/5.png
+    - assets/sample/usdt.png
   
   # Fonts configuration
   fonts:

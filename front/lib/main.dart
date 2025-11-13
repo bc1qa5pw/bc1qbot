@@ -235,24 +235,25 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 20,
                             )),
                         SizedBox(
+                          height: 20,
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               children: [
                                 Image.asset('assets/sample/1.png',
-                                    width: 15, height: 15, fit: BoxFit.contain),
+                                    width: 20, height: 20, fit: BoxFit.contain),
                                 const SizedBox(width: 5),
                                 Image.asset('assets/sample/2.png',
-                                    width: 15, height: 15, fit: BoxFit.contain),
+                                    width: 20, height: 20, fit: BoxFit.contain),
                                 const SizedBox(width: 5),
                                 Image.asset('assets/sample/3.png',
-                                    width: 15, height: 15, fit: BoxFit.contain),
+                                    width: 20, height: 20, fit: BoxFit.contain),
                                 const SizedBox(width: 5),
                                 Image.asset('assets/sample/4.png',
-                                    width: 15, height: 15, fit: BoxFit.contain),
+                                    width: 20, height: 20, fit: BoxFit.contain),
                                 const SizedBox(width: 5),
                                 Image.asset('assets/sample/5.png',
-                                    width: 15, height: 15, fit: BoxFit.contain),
+                                    width: 20, height: 20, fit: BoxFit.contain),
                               ],
                             ),
                           ),
@@ -260,30 +261,63 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     const SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text('1',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 30,
+                              color: Color(0xFFE4E4E4),
+                            )),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/sample/usdt.png',
+                                width: 20, height: 20, fit: BoxFit.contain),
+                            const SizedBox(width: 8),
+                            const Text('usdt',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xFFE4E4E4),
+                                  fontSize: 20,
+                                )),
+                            const SizedBox(width: 8),
+                            SvgPicture.asset(
+                              'assets/icons/select.svg',
+                              width: 5,
+                              height: 10,
+                              colorFilter: const ColorFilter.mode(
+                                Color(0xFFE4E4E4),
+                                BlendMode.srcIn,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 15),
                     const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: []),
+                        children: [
+                          Text(r'$1',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Color(0xFF818181),
+                              )),
+                          Text('On TON',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Color(0xFF818181),
+                              )),
+                        ]),
                     const SizedBox(height: 15),
                     const Row()
                   ]),
-                ),
-                Container(
-                  width: double.infinity,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text('1',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                          )),
-                      Row()
-                    ],
-                  ),
                 ),
                 if (!_isFocused)
                   Padding(
