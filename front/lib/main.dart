@@ -1724,18 +1724,18 @@ class _SimpleMainPageState extends State<SimpleMainPage>
     
     return [
       {
-        'icon': 'assets/sample/mak/1.svg',
-        'primaryText': 'CLATH 41 NFT recieved',
-        'secondaryText': 'AI CLATH Collection',
-        'timestamp': '15:22',
-        'rightText': 'Price N/A',
-      },
-      {
-        'icon': 'assets/sample/mak/2.svg',
+        'icon': 'assets/sample/DLLR.svg',
         'primaryText': 'Token granted',
         'secondaryText': '\$1',
         'timestamp': '13:17',
         'rightText': '+1 DLLR',
+      },
+      {
+        'icon': 'assets/sample/mak/1.svg',
+        'primaryText': 'CLATH 41 NFT recieved',
+        'secondaryText': 'AI CLATH Collection',
+        'timestamp': '15:22',
+        'rightText': 'N/A',
       },
       {
         'icon': 'assets/sample/mak/3.svg',
@@ -2134,7 +2134,7 @@ class _SimpleMainPageState extends State<SimpleMainPage>
                                       height: 15,
                                       child: Center(
                                         child: Text(
-                                          'Earn',
+                                          'Apps',
                                           style: TextStyle(
                                             fontFamily: 'Aeroport',
                                             fontSize: 15,
@@ -2285,16 +2285,16 @@ class _SimpleMainPageState extends State<SimpleMainPage>
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    _selectedTab = 'Play';
+                                    _selectedTab = 'Earn';
                                   });
                                 },
                                 child: Text(
-                                  'Play',
+                                  'Earn',
                                   style: TextStyle(
                                     fontFamily: 'Aeroport',
                                     fontSize: 20,
                                     fontWeight: FontWeight.w500,
-                                    color: _selectedTab == 'Play'
+                                    color: _selectedTab == 'Earn'
                                         ? AppTheme.textColor
                                         : const Color(0xFF818181),
                                   ),
@@ -2487,18 +2487,18 @@ class _SimpleMainPageState extends State<SimpleMainPage>
                               }).toList(),
                             ),
                           // Play content - shown when Play tab is selected
-                          if (_selectedTab == 'Play')
-                            const Center(
-                              child: Text(
-                                'Play',
-                                style: TextStyle(
-                                  fontFamily: 'Aeroport',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xFF818181),
-                                ),
-                              ),
-                            ),
+                          // if (_selectedTab == 'Earn')
+                          //   const Center(
+                          //     child: Text(
+                          //       'Earn',
+                          //       style: TextStyle(
+                          //         fontFamily: 'Aeroport',
+                          //         fontSize: 20,
+                          //         fontWeight: FontWeight.w500,
+                          //         color: Color(0xFF818181),
+                          //       ),
+                          //     ),
+                          //   ),
                           // Coins list - shown when Coins tab is selected
                           if (_selectedTab == 'Coins')
                             Column(
@@ -4876,16 +4876,77 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     ]),
                               ]),
                             ),
+                            const SizedBox(height: 10),
                             Container(
                               width: double.infinity,
                               padding: const EdgeInsets.symmetric(
-                                  vertical: 0, horizontal: 15),
-                              child: SvgPicture.asset(
-                                AppTheme.isLightTheme
-                                    ? 'assets/icons/rotate_light.svg'
-                                    : 'assets/icons/rotate_dark.svg',
-                                width: 30,
-                                height: 30,
+                                  vertical: 10, horizontal: 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Max.',
+                                    style: TextStyle(
+                                      fontFamily: 'Aeroport',
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF818181),
+                                      height: 1.0,
+                                    ),
+                                    textHeightBehavior:
+                                        const TextHeightBehavior(
+                                      applyHeightToFirstAscent: false,
+                                      applyHeightToLastDescent: false,
+                                    ),
+                                  ),
+                                  SvgPicture.asset(
+                                    AppTheme.isLightTheme
+                                        ? 'assets/icons/rotate_light.svg'
+                                        : 'assets/icons/rotate_dark.svg',
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Sendal Rodriges',
+                                        style: TextStyle(
+                                          fontFamily: 'Aeroport',
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppTheme.textColor,
+                                          height: 1.0,
+                                        ),
+                                        textHeightBehavior:
+                                            const TextHeightBehavior(
+                                          applyHeightToFirstAscent: false,
+                                          applyHeightToLastDescent: false,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 5),
+                                      const Text(
+                                        r'1$',
+                                        style: TextStyle(
+                                          fontFamily: 'Aeroport',
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xFF818181),
+                                          height: 1.0,
+                                        ),
+                                        textHeightBehavior:
+                                            const TextHeightBehavior(
+                                          applyHeightToFirstAscent: false,
+                                          applyHeightToLastDescent: false,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 5),
+                                      SvgPicture.asset('assets/icons/select.svg', width: 5, height: 10),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                             Container(
@@ -5027,7 +5088,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 children: [
                                   Center(
                                     child: Text(
-                                      'Add wallet',
+                                      'Swap',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
                                         color: AppTheme.buttonTextColor,
